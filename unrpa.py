@@ -24,7 +24,7 @@ import pickle
 
 
 class UnRPA:
-    NAME = "unrpa"
+    NAME = ""
 
     def __init__(self, filename, verbosity=1, path=None, mkdir=False, version=None):
         self.verbose = verbosity
@@ -38,13 +38,13 @@ class UnRPA:
 
     def log(self, verbosity, message):
         if self.verbose > verbosity:
-            print("{}: {}".format(UnRPA.NAME, message))
+            print("{} {}".format(UnRPA.NAME, message))
 
     def exit(self, message):
         sys.exit("{}: error: {}".format(UnRPA.NAME, message))
 
     def extract_files(self):
-        self.log(0, "extracting files.")
+        self.log(0, "")
         if self.mkdir:
             self.make_directory_structure(self.path)
         if not os.path.isdir(self.path):
